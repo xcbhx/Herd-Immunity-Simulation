@@ -1,6 +1,8 @@
 # Final Project: Herd Immunity Simulation
 
-We're going to create a basic simulation of herd immunity by modeling how a virus moves through a population where some (but not all) of a population is vaccinated against this virus.
+Imagine you have been hired at a new startup working on health and medicine or the World Health Organization.
+
+Your job is to create a simulation of herd immunity by modeling how a virus moves through a population where some (but not all) of a population is vaccinated against a virus.
 
 This ReadMe (project description and specs) is a draft to help you get started on the project and will be updated with more detail as we improve the project and answer questions.
 
@@ -13,25 +15,26 @@ This ReadMe (project description and specs) is a draft to help you get started o
 
 ### Rules
 
-1. A sick person only has a chance at infecting healthy, unvaccinated people they encounter.  
-1. An infected person cannot infect a vaccinated person.  This still counts as an interaction.  
+1. A sick person only has a chance at infecting uninfected, unvaccinated people they encounter.  
+1. An infected person cannot infect a vaccinated person. This still counts as an interaction.  
 1. An infected person cannot infect someone that is already infected.  This still counts as an interaction.
-1. At the end of a time step, an infected person will either die of the infection or get better.  The chance they will die is the percentage chance stored in mortality_rate.  
-1. For simplicity's sake, if the person does not die, we will consider them immune to the virus and change is_vaccinated to True when this happens.  
-1. Dead people can no longer be infected, either.  Any time an individual dies, we should also change their .infected attribute to False.  
+1. At the end of a time step, an infected person will either die of the infection or get better.  The chance they will die is the percentage chance stored in `mortality_rate`.  
+1. For simplicity's sake, if the person does not die, we will consider them immune to the virus and change `is_vaccinated` to `True` when this happens.  
+1. Dead people can no longer be infected, either. Any time an individual dies, we should also change their `infected` attribute to `False`.  
 1. All state changes for a person should occur at the **end** of a time step, after all infected persons have finished all of their interactions.  
-1. During the interactions, make note of any new individuals infected on this turn.  After the interactions are over, we will change the .infected attribute of all newly infected individuals to True.  1. Resolve the states of all individuals that started the turn infected by determining if they die or survive the infection, and change the appropriate attributes.  
+1. During the interactions, make note of any new individuals infected on this step. After the interactions are over, we will change the `infected` attribute of all newly infected individuals to `True`.  
+1. Resolve the states of all individuals that started the turn infected by determining if they die or survive the infection, and change the appropriate attributes.  
 1. The simulation should output a logfile that contains a record of every interaction that occurred during the simulation.  We will use this logfile to determine final statistics and answer questions about the simulation.
 
 ### Answer These Questions
 
 Once you have successfully run a simulation, use your python skills to answer to analyze the simulation results
+
 1. What were the inputs you gave the simulation? (Population size, percent vaccinated, virus name, mortality rate,  reproductive rate)
 1. What percentage of the population became infected at some point before the virus burned out?
 1.  What percentage of the population died from the virus?
 1.  Out of all interactions sick individuals had during the entire simulation, how many total interactions did we see where a vaccination saved a person from potentially becoming infected?
-<br>
-<br>
+
 *When you have answered these questions, please put your answers in a file called 'answers.txt' and commit this to your repo.*
 
 ## Getting Started
@@ -68,11 +71,16 @@ Set up your local clone of this project repo on your computer.
 ## Running the Program
 
 The program is designed to be run from the command line.  You can do this by running
-`python3 simulation.py` followed by the command line arguments in the following order,
-separated by spaces:
- {population size} {vacc_percentage} {virus_name} {mortality_rate} {repro_rate} {optional: number of people initially infected (default is 1)}
+
+```python
+python3 simulation.py
+```
+
+followed by the command line arguments in the following order,
+separated by spaces: {population size} {vacc_percentage} {virus_name} {mortality_rate} {repro_rate} {optional: number of people initially infected (default is 1)}
 
  Let's look at an example:
+
  * Population Size: 100,000
  * Vaccination Percentage: 90%
  * Virus Name: Ebola
@@ -80,8 +88,13 @@ separated by spaces:
  * Reproduction Rate: 25%
  * People Initially Infected: 10
 
- Then I would type: <br>
- `python3 simulation.py 100000 0.90 Ebola 0.70 0.25 10` in the terminal.
+ Then I would type:
+
+ ```python
+ python3 simulation.py 100000 0.90 Ebola 0.70 0.25 10
+ ``` 
+ 
+ in the terminal.
 
 ## Basic Structure
 
@@ -113,20 +126,29 @@ This is a big project.  There's no way that all the code you write is going to w
 
 ## Project Completion
 
-For this project to be considered complete, you need to add your repo link to the course tracker. Please do not change the random seed set in the Simulation class! It is currently set to 42, and we will use this to double check that your simulation works and spits out the expected results.
+For this project to be considered complete, you need to:
+
+- include a .gitignore
+- submit your completed repo to GradeScope
+
+Please do not change the random seed set in the Simulation class! It is currently set to 42, and we will use this to double check that your simulation works and spits out the expected results.
 
 **Your repo should contain:**
-  * Completed classes for `logger.py`, `simulation.py`, and `person.py`.
-  * The addition of at least 2 additional tests to the `virus.py` file.
-  * The addition of at least 3 additional tests to the `person.py` file.
-  * At least 1 log file generated from running your simulation.
-  * `simulation_test.py` file should be created that allows for testing the simulation.
-  * `logger_test.py` file should be created that allows for the testing of the logger class.
-  * Answers to the questions asked above listed in a file named `answers.txt`.
+
+* Completed classes for `logger.py`, `simulation.py`, and `person.py`.
+* The addition of at least 2 additional tests to the `virus.py` file.
+* The addition of at least 3 additional tests to the `person.py` file.
+* At least 1 log file generated from running your simulation.
+* `simulation_test.py` file should be created that allows for testing the simulation.
+* `logger_test.py` file should be created that allows for the testing of the logger class.
+* Answers to the questions asked above listed in a file named `answers.txt`.
 
 ### Stretch Challenges
 
 You'll find some of the smaller, individual stretch challenges contained with the comments of the code on the logger class.  Other stretch challenges include:
 
-  * Extending functionality so that we can test the spread of multiple viruses through a given population at the same time. (Difficulty Level: Hard)
-  * Create a Visualizer class that can spit out visualizations of the spread of the virus based on the log files of a simulation.  HINT: You'll want to use Matplotlib for visualization stuff, because its easy to use and generally awesome at this sort of thing.  You may also want to consider using a library like Pandas for organizing and cleaning your data in a more professional way, especially if you want to visualize answers to more complex questions.  Matplotlib and Pandas play very nicely together! (Difficulty Level: Medium)
+* Extending functionality so that we can test the spread of multiple viruses through a given population at the same time. (Difficulty Level: Hard)
+* Create a visualization of the simulation. You can do this with pygame. Create a number of sprites equal to the the number of people in your simulation. Show their status as color: Red = infected, Blue = uninfected, Green = vancinated, black = deceased.
+  - If you try this challenge you can change the interaction system to measure infections between sprites that collide. This would mean that the people/Sprites would need to be mobile
+  - You could also show this as a static image. 
+* Graph the visualization using mathplotlib. This is a lirbary used to draw graphs and charts. You can use to graph the results of running the simulation. 

@@ -152,3 +152,8 @@ You'll find some of the smaller, individual stretch challenges contained with th
   - If you try this challenge you can change the interaction system to measure infections between sprites that collide. This would mean that the people/Sprites would need to be mobile
   - You could also show this as a static image. 
 * Graph the visualization using mathplotlib. This is a lirbary used to draw graphs and charts. You can use to graph the results of running the simulation. 
+* Using a different calculation for figuring infections such as: Mask compliance percentage, incubation time etc. These are okay to apply with the follow notes: 
+  - The project must be done on time.
+  - Running the simulation must still work the same. If there are any new required parameters these must be fully documented.
+  - The output must adhere to the project description. 
+  

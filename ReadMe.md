@@ -8,8 +8,8 @@ This ReadMe (project description and specs) is a draft to help you get started o
 
 ## Goals
 
-* Finish the code in these files to create a working simulation that creates log files of major events.  
-* Design your program to follow the rules of the simulation.
+* Finish the code in these files to create a working simulation that logs it's results.  
+* Design your program to follow the [rules](#rules) of the simulation.
 * Get your data for virus name, mortality rate, and reproductive rate from [this Guardian article](https://www.theguardian.com/news/datablog/ng-interactive/2014/oct/15/visualised-how-ebola-compares-to-other-infectious-diseases).  
 * During every time step of the simulation, **every sick person** should randomly interact with **100 other people** in the population. The chance of a sick person infecting a person that they interact with is the virus's reproductive rate.  Example: if a virus has a reproductive rate of 15, then, on average, a sick person should infect 15 of the 100 people they interact with during that time step.
 

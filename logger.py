@@ -1,22 +1,27 @@
 class Logger(object):
-    ''' Utility class responsible for logging all interactions during the simulation. '''
-    # TODO: Write a test suite for this class to make sure each method is working
-    # as expected.
-
-    # PROTIP: Write your tests before you solve each function, that way you can
-    # test them one by one as you write your class.
-
     def __init__(self, file_name):
         # TODO:  Finish this initialization method. The file_name passed should be the
         # full file name of the file that the logs will be written to.
-        self.file_name = None
+        pass
+
+    # The methods below are just suggestions. You can rearrange these or 
+    # rewrite them to better suit your code style. 
+    # What is important is that you log the following information from the simulation:
+    # Meta data: This shows the starting situtation including:
+    #   population, initial infected, the virus, and the initial vaccinated.
+    # Log interactions. At each step there will be a number of interaction
+    # You should log:
+    #   The number of interactions, the number of new infections that occured
+    # You should log the results of each step. This should inlcude: 
+    #   The population size, the number of living, the number of dead, and the number 
+    #   of vaccinated people at that step. 
+    # When the simulation concludes you should log the results of the simulation. 
+    # This should include: 
+    #   The population size, the number of living, the number of dead, the number 
+    #   of vaccinated, and the number of steps to reach the end of the simulation. 
 
     def write_metadata(self, pop_size, vacc_percentage, virus_name, mortality_rate,
                        basic_repro_num):
-        '''
-        The simulation class should use this method immediately to log the specific
-        parameters of the simulation as the first line of the file.
-        '''
         # TODO: Finish this method. This line of metadata should be tab-delimited
         # it should create the text file that we will store all logs in.
         # TIP: Use 'w' mode when you open the file. For all other methods, use
@@ -25,51 +30,19 @@ class Logger(object):
         # event logged ends up on a separate line!
         pass
 
-    def log_interaction(self, person, random_person, random_person_sick=None,
-                        random_person_vacc=None, did_infect=None):
-        '''
-        The Simulation object should use this method to log every interaction
-        a sick person has during each time step.
-
-        The format of the log should be: "{person.ID} infects {random_person.ID} \n"
-
-        or the other edge cases:
-            "{person.ID} didn't infect {random_person.ID} because {'vaccinated' or 'already sick'} \n"
-        '''
+    def log_interactions(self, step_number, number_of_interactions, number_of_new_infections):
         # TODO: Finish this method. Think about how the booleans passed (or not passed)
         # represent all the possible edge cases. Use the values passed along with each person,
         # along with whether they are sick or vaccinated when they interact to determine
         # exactly what happened in the interaction and create a String, and write to your logfile.
         pass
 
-    def log_infection_survival(self, person, did_die_from_infection):
-        ''' The Simulation object uses this method to log the results of every
-        call of a Person object's .resolve_infection() method.
-
-        The format of the log should be:
-            "{person.ID} died from infection\n" or "{person.ID} survived infection.\n"
-        '''
+    def log_infection_survival(self, step_number, population_count, number_of_new_fatalities):
         # TODO: Finish this method. If the person survives, did_die_from_infection
         # should be False.  Otherwise, did_die_from_infection should be True.
         # Append the results of the infection to the logfile
         pass
 
     def log_time_step(self, time_step_number):
-        ''' STRETCH CHALLENGE DETAILS:
-
-        If you choose to extend this method, the format of the summary statistics logged
-        are up to you.
-
-        At minimum, it should contain:
-            The number of people that were infected during this specific time step.
-            The number of people that died on this specific time step.
-            The total number of people infected in the population, including the newly infected
-            The total number of dead, including those that died during this time step.
-
-        The format of this log should be:
-            "Time step {time_step_number} ended, beginning {time_step_number + 1}\n"
-        '''
-        # TODO: Finish this method. This method should log when a time step ends, and a
-        # new one begins.
-        # NOTE: Here is an opportunity for a stretch challenge!
+        # 
         pass

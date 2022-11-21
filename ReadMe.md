@@ -62,7 +62,7 @@ Set up your local clone of this project repo on your computer.
 1. **Clone** (do not _fork_) this repo on GitHub onto your local computer.
 
   - First open your terminal and navigate into the folder where you keep your projects: `cd ~/MakeSchool/Projects` (or something similar for your folders)
-  - Then run this command to _clone_ the course repo: `git clone https://github.com/Make-School-Labs/Herd-Immunity-Simulation.git`
+  - Then run this command to _clone_ the course repo: `git clone https://github.com/Tech-at-DU/Herd-Immunity-Simulation.git`
   - Now navigate into the new folder Git just created: `cd Herd-Immunity-Simulation`
 
 2. [**Create a new empty repo** on GitHub](https://github.com/new) also named `Herd-Immunity-Simulation` and **do not** initialize it with a ReadMe. (Creating a _new_ repo instead of a _fork_ allows you to earn credit towards your GitHub commit streak.)

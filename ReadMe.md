@@ -8,17 +8,17 @@ This ReadMe (project description and specs) is a draft to help you get started o
 
 ## Table of Contents
 
-- [Goals](#%67%6F%61%6C%73)
-- [Rules](#%72%75%6C%65%73)
-- [Answer These Questions](#%61%6E%73%77%65%72%2D%74%68%65%73%65%2D%71%75%65%73%74%69%6F%6E%73)
-- [Getting Started](#%67%65%74%74%69%6E%67%2D%73%74%61%72%74%65%64)
-- [Repository Setup](#%72%65%70%6F%73%69%74%6F%72%79%2D%73%65%74%75%70)
-- [Running the Program](#%72%75%6E%6E%69%6E%67%2D%74%68%65%2D%70%72%6F%67%72%61%6D)
-- [Basic Structure](#%62%61%73%69%63%2D%73%74%72%75%63%74%75%72%65)
-- [Tips for Success](#%74%69%70%73%2D%66%6F%72%2D%73%75%63%63%65%73%73)
-- [Project Completion](#%70%72%6F%6A%65%63%74%2D%63%6F%6D%70%6C%65%74%69%6F%6E)
-- [Stretch Challenges](#%73%74%72%65%74%63%68%2D%63%68%61%6C%6C%65%6E%67%65%73)
-- [FAQs](#%66%61%71%73)
+- [**Goals**](#%67%6F%61%6C%73)
+  - [Rules](#%72%75%6C%65%73)
+  - [Answer These Questions](#%61%6E%73%77%65%72%2D%74%68%65%73%65%2D%71%75%65%73%74%69%6F%6E%73)
+- [**Getting Started**](#%67%65%74%74%69%6E%67%2D%73%74%61%72%74%65%64)
+  - [Repository Setup](#%72%65%70%6F%73%69%74%6F%72%79%2D%73%65%74%75%70)
+  - [Running the Program](#%72%75%6E%6E%69%6E%67%2D%74%68%65%2D%70%72%6F%67%72%61%6D)
+  - [Basic Structure](#%62%61%73%69%63%2D%73%74%72%75%63%74%75%72%65)
+- [**Tips for Success**](#%74%69%70%73%2D%66%6F%72%2D%73%75%63%63%65%73%73)
+- [**Project Completion**](#%70%72%6F%6A%65%63%74%2D%63%6F%6D%70%6C%65%74%69%6F%6E)
+- [**Stretch Challenges**](#%73%74%72%65%74%63%68%2D%63%68%61%6C%6C%65%6E%67%65%73)
+- [**FAQs**](#%66%61%71%73)
 
 ## Goals
 
@@ -27,7 +27,7 @@ This ReadMe (project description and specs) is a draft to help you get started o
 - Get your data for virus name, mortality rate, and reproductive rate from [this Guardian article](https://www.theguardian.com/news/datablog/ng-interactive/2014/oct/15/visualised-how-ebola-compares-to-other-infectious-diseases).
 - During every time step of the simulation, **every sick person** should randomly interact with **100 other people** in the population. The chance of a sick person infecting a person that they interact with is the virus's reproductive rate. Example: if a virus has a reproductive rate of 15, then, on average, a sick person should infect 15 of the 100 people they interact with during that time step.
 
-## Rules
+### Rules
 
 1. A sick person only has a chance at infecting uninfected, unvaccinated people they encounter.
 2. An infected person cannot infect a vaccinated person. This still counts as an interaction.
@@ -40,7 +40,7 @@ This ReadMe (project description and specs) is a draft to help you get started o
 9. Resolve the states of all individuals that started the turn infected by determining if they die or survive the infection, and change the appropriate attributes.
 10. The simulation should output a logfile that contains a record of every interaction that occurred during the simulation. We will use this logfile to determine final statistics and answer questions about the simulation.
 
-## Answer These Questions
+### Answer These Questions
 
 Once you have successfully run a simulation, use your python skills to answer to analyze the simulation results
 
@@ -77,7 +77,7 @@ Set up your local clone of this project repo on your computer.
 
 **Let's get coding!** You'll find instructions for what you need to do marked within the files themselves. Anything that you explicitly need to code should be marked with a comment that starts with `#TODO`.
 
-## Running the Program
+### Running the Program
 
 The program is designed to be run from the command line. You can do this by running
 
@@ -104,7 +104,7 @@ Let's look at an example:
 
   in the terminal.
 
-## Basic Structure
+### Basic Structure
 
 The program consists of 4 classes: `Person`, `Virus`, `Simulation`, and `Logger`.
 

@@ -201,13 +201,13 @@ _(example: infected, incubation, self quarantine. Infectious time period)_
 
 #### While Simulation Runs: Display  Every Iteration
 
- - The number of new infections
- - The number of deaths
- - Statistics for the current state of the population:
+- The number of new infections
+- The number of deaths
+- Statistics for the current state of the population:
  
-      - Total number of living people
-      - Total number of dead people
-      - Total number of vaccinated people
+    - Total number of living people
+    - Total number of dead people
+    - Total number of vaccinated people
              
  #### After Simulation Ends: Summary
  

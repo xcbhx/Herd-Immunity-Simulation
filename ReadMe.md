@@ -1,6 +1,6 @@
 # Final Project: Herd Immunity Simulation
 
-_Imagine you have been hired at a new startup focused on health and medicine --- and the World Health Organization needs your skills a programmatic pandemic simulation specialist!_
+_Imagine you have been hired at a new startup focused on health and medicine --- and the World Health Organization needs your skills as programmatic pandemic simulation specialist!_
 
 **Your job is to create a simulation of herd immunity by modeling how a virus moves through a population where some (but not all) of a population is vaccinated against a virus.**
 
@@ -40,18 +40,20 @@ _Imagine you have been hired at a new startup focused on health and medicine ---
 
 ### Answer These Questions
 
-Once you have successfully run a simulation, use your python skills to answer to analyze the simulation results
+Once you have successfully run a simulation, use your python skills to **analyze the simulation results**:
 
-1. What were the inputs you gave the simulation? (Population size, percent vaccinated, virus name, mortality rate, reproductive rate)
-2. What percentage of the population became infected at some point before the virus burned out?
-3. What percentage of the population died from the virus?
-4. Out of all interactions sick individuals had during the entire simulation, how many total interactions did we see where a vaccination saved a person from potentially becoming infected?
+1. What were the **inputs** you gave the simulation? (Population size, percent vaccinated, virus name, mortality rate, reproductive rate)
+2. What percentage of the population became **infected** at some point before the virus burned out?
+3. What percentage of the population **died** from the virus?
+4. Out of all interactions sick individuals had during the entire simulation, **how many times, in total, did a vaccination save someone from potentially becoming infected**?
 
 _When you have answered these questions, please put your answers in a file called 'answers.txt' and commit this to your repo._
 
 ## Getting Started
 
-**Important:** Please follow these instructions _exactly_. If you skip a step or do them out of order, it may not work correctly or you may not earn credit towards your GitHub commit streak.
+‼️ **IMPORTANT:** Please follow these instructions _exactly_. 
+
+If you skip a step or do them out of order, it may not work correctly or you may not earn credit towards your GitHub commit streak.
 
 ### Repository Setup
 
@@ -189,7 +191,7 @@ _(example: infected, incubation, self quarantine. Infectious time period)_
 
 **A**: Include a header, a step for for each step the simulation ran, and a footer showing the final state of the populatio. Here are some details:
    
-#### When Simulation Begins: Header
+#### Before Simulation Begins: Display Introduction
 
 - Initial size of the population
 - Initial number of infected people
@@ -197,7 +199,7 @@ _(example: infected, incubation, self quarantine. Infectious time period)_
 - Stats for the virus
 - Date the simulation was run
 
-#### Each Iteration
+#### While Simulation Runs: Display  Every Iteration
 
  - The number of new infections
  - The number of deaths

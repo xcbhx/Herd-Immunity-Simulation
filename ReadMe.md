@@ -151,15 +151,15 @@ Starting by thinking about your test cases and aiming for good test coverage is 
 
 _You'll find some of the smaller, individual stretch challenges contained with the comments of the code on the logger class. Other stretch challenges include:_
 
-1. Extending functionality so that we can test the spread of multiple viruses through a given population at the same time. (Difficulty Level: Hard)
-1. Create a visualization of the simulation. You can do this with Pygame. Create a number of sprites equal to the the number of people in your simulation. 
+1. Extending the functionality so that we can **test the spread of multiple viruses through a given population** at the same time. (Difficulty Level: Hard)
+1. **Create a visualization of the simulation**. You can do this with Pygame. Create a number of sprites equal to the the number of people in your simulation. 
 
    - Show their status as color: `Red = infected`, `Blue = uninfected`, `Green = vaccinated`, `black = deceased`.
    - If you try this challenge you can change the interaction system to measure infections between sprites that collide.
    - You could also display this as a static image.
 
-1. Graph the visualization using matplotlib. This is a library used to draw graphs and charts. You could use it to graph the results of the finished simulation.
-1. Using a different calculation for figuring infections such as: Mask compliance percentage, incubation time etc. These are okay to apply with the follow notes:
+1. **Graph the visualization using `matplotlib`**. This is a library used to draw graphs and charts. You could use it to graph the results of the finished simulation.
+1. Use an **alternative calculation for figuring infections**, like: mask compliance percentage, incubation time, etc. Consider the following when applying:
 
    - The project must be done on time.
    - Running the simulation must still work the same. If there are any new required parameters these must be fully documented.
@@ -176,7 +176,8 @@ _You'll find some of the smaller, individual stretch challenges contained with t
 **A**: This is up to you; it is not specified in the requirements. If the initially infected group tests their mortality, they probably should do sp at the end of the first time step.
 
 ### Q: Should I simulate different stages of the virus? 
-<small><em>(example: infected, incubation, self quarantine. Infectious time period)</em></small>
+
+_(example: infected, incubation, self quarantine. Infectious time period)_
    
 **A**: It's up to you. I recommend getting a basic simulation working first using simple rules before adding this since it will be more work. It's more important to get the work done on time than it is to add new features.
 

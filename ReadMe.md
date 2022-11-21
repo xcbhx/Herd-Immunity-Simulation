@@ -117,53 +117,49 @@ When you run `simulation.py` with the corresponding command-line arguments neces
 
 First, take a look at each of the files. Get a feel for the methods and attributes in each. Feel overwhelmed? Don't panic. Instead, get out a piece of paper or a whiteboard and try to diagram what needs to happen and when using each of the objects and methods. Draw out the data flow.
 
-**If you don't understand something, talk to your classmates and ask for help!**
+### Not Sure? Talk to Classmates & Ask for Help
 
 Ask your classmates and teachers for clarification/help/code reviews as needed, or drop in to tutoring hours. Share your questions and insights in the course Slack channel, or book some time to get help from Justin and Phyllis, the course teaching assistants. Collaboration is encouraged, but be sure that you typed in all the code yourself and the final project is your own!
 
-_Found a bug or a problem? Contact the course instructor or a teaching assistant!_
+### Found a Bug or Problem? 
 
-The template code was written in a cottage on the coast of Ireland with spotty power during the strongest hurricane Ireland has seen in 61 years, [Editor's note: this is 100% true] so... **there are probably some bugs in the template code**. If you think something doesn't make sense, double check with your classmates and/or the instructor. If you feel the need to modify the template code to make it work another way, that's totally fine! The template code is there to help you, but it isn't a requirement that you use all of it.
+Contact the course instructor or a teaching assistant!
 
-**WRITE TESTS!**
+If you think something doesn't make sense, double check with your classmates or the instructor. If you feel the need to modify the template code to make it work another way, that's totally fine! The template code is there to help you, but it isn't a requirement that you use all of it.
 
-This is a big project. There's no way that all the code you write is going to work the first time. Also, see the paragraph above about all of this being coded by a man on a mountain during a 61-year storm while fighting off mountain lions with only a soup-ladle to defend himself. Starting by thinking about your test cases and aiming for good test coverage is a great way to vaccinate yourself against any pre-existing bugs in the template. Not sure how to write tests? Look at the tests for the Super Hero project and utilize some strategies from those tests.
+### Write Tests!
+
+Starting by thinking about your test cases and aiming for good test coverage is a great way to vaccinate yourself against any pre-existing bugs in the template. 
+ 
+ Not sure how to write tests? Look at the tests for the Super Hero project and utilize some strategies from those tests.
 
 ## Project Completion
 
-For this project to be considered complete, you need to:
+**For the project to be considered done, you must**:
 
-- include a `.gitignore`
-- submit your completed repo to Gradescope
-
-**IMPORTANT: Please do not change the random seed set in the Simulation class! It is currently set to 42, and we will use this to double check that your simulation works and spits out the expected results.**
-
-**Your repo should contain**:
-
-- Completed classes for `logger.py`, `simulation.py`, and `person.py`.
-- The addition of at least 2 additional tests to the `virus.py` file.
-- The addition of at least 3 additional tests to the `person.py` file.
-- At least 1 log file generated from running your simulation.
-- `simulation_test.py` file should be created that allows for testing the simulation.
-- `logger_test.py` file should be created that allows for the testing of the logger class.
-- Answers to the questions asked above listed in a file named `answers.txt`.
+- Complete classes for `logger.py`, `simulation.py`, and `person.py`.
+- Add at least 2 additional tests to the `virus.py` file.
+- Add at least 3 additional tests to the `person.py` file.
+- Add at least 1 log file generated from running your simulation.
+- A `simulation_test.py` file should be created that allows for testing the simulation.
+- A `logger_test.py` file should be created that allows for the testing of the logger class.
+- Your answers to the [questions asked above](#answer-these-questions) listed in a file named `answers.txt`.
+- Include a `.gitignore`
+- Submit your completed repo to Gradescope
 
 ## Stretch Challenges
 
-You'll find some of the smaller, individual stretch challenges contained with the comments of the code on the logger class. Other stretch challenges include:
+_You'll find some of the smaller, individual stretch challenges contained with the comments of the code on the logger class. Other stretch challenges include:_
 
-- Extending functionality so that we can test the spread of multiple viruses through a given population at the same time. (Difficulty Level: Hard)
+1. Extending functionality so that we can test the spread of multiple viruses through a given population at the same time. (Difficulty Level: Hard)
+1. Create a visualization of the simulation. You can do this with Pygame. Create a number of sprites equal to the the number of people in your simulation. 
 
-- Create a visualization of the simulation. You can do this with pygame. Create a number of sprites equal to the the number of people in your simulation. Show their status as color: Red = infected, Blue = uninfected, Green = vancinated, black = deceased.
+   - Show their status as color: `Red = infected`, `Blue = uninfected`, `Green = vaccinated`, `black = deceased`.
+   - If you try this challenge you can change the interaction system to measure infections between sprites that collide.
+   - You could also display this as a static image.
 
-   - If you try this challenge you can change the interaction system to measure infections between sprites that collide. This would mean that the people/Sprites would need to be mobile
-    
-   - You could also show this as a static image.
-
-
-- Graph the visualization using mathplotlib. This is a lirbary used to draw graphs and charts. You can use to graph the results of running the simulation.
-
-- Using a different calculation for figuring infections such as: Mask compliance percentage, incubation time etc. These are okay to apply with the follow notes:
+1. Graph the visualization using matplotlib. This is a library used to draw graphs and charts. You could use it to graph the results of the finished simulation.
+1. Using a different calculation for figuring infections such as: Mask compliance percentage, incubation time etc. These are okay to apply with the follow notes:
 
    - The project must be done on time.
    - Running the simulation must still work the same. If there are any new required parameters these must be fully documented.

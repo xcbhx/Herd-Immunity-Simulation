@@ -157,27 +157,27 @@ You'll find some of the smaller, individual stretch challenges contained with th
   - Running the simulation must still work the same. If there are any new required parameters these must be fully documented.
   - The output must adhere to the project description. 
 
-## Questions and Answers about the problem
+## FAQs
 
-- Q: Should we include the number of new infections at each step in the logged output? 
+- **Q: Should we include the number of new infections at each step in the logged output?** 
     
-    A: Yes include the number of new infections that happened each step in your log. 
+  **A**: Yes, include the number of new infections that happened each step in your log. 
     
-- Q: Should the initially infected group test their mortality against the virus? 
+- **Q: Should the initially infected group test their mortality against the virus?**
     
     A: This is up to you. It is not specified in the doc. If the initially infected group tests their mortality they probably should do it at the end of the first time step. 
     
-- Q: Should I simulate different stages of the virus? For example: infected, incubation, self quarantine. Infectious time period. 
+- **Q: Should I simulate different stages of the virus?** _(example: infected, incubation, self quarantine. Infectious time period)_
     
-    A: It's up to you. I recommend getting a basic simulation working first using simple rules before adding this since it will be more work. It's more important to get the work done on time than it is to add new features. 
+  **A**: It's up to you. I recommend getting a basic simulation working first using simple rules before adding this since it will be more work. It's more important to get the work done on time than it is to add new features. 
     
-- Q: Should create a UI for a pygame simulation? 
+- **Q: Should create a UI for a pygame simulation?**
     
-    A: Pygame doesn't include any UI controls. This makes it a lot of work to add a user interface. If you choose to use Pygame (its a stretch challenge) you can include variables at the top of your main.py that the researchers can adjust for each run of the simulation. 
+  **A**: Pygame doesn't include any UI controls. This makes it a lot of work to add a user interface. If you choose to use Pygame (its a stretch challenge) you can include variables at the top of your main.py that the researchers can adjust for each run of the simulation. 
     
-- Q: What should the logger output looks like? 
+- **Q: What should the logger output looks like?**
   
-  A: Include a header, a step for for each step the simulation ran, and a footer showing the final state of the populatio. Here are some details:
+  **A**: Include a header, a step for for each step the simulation ran, and a footer showing the final state of the populatio. Here are some details:
   
     - Header 
       - Initial size of the population

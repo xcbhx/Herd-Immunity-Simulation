@@ -1,10 +1,8 @@
 # Final Project: Herd Immunity Simulation
 
-Imagine you have been hired at a new startup working on health and medicine or the World Health Organization.
+_Imagine you have been hired at a new startup focused on health and medicine --- and the World Health Organization needs your skills a programmatic pandemic simulation specialist!_
 
-Your job is to create a simulation of herd immunity by modeling how a virus moves through a population where some (but not all) of a population is vaccinated against a virus.
-
-This ReadMe (project description and specs) is a draft to help you get started on the project and will be updated with more detail as we improve the project and answer questions.
+**Your job is to create a simulation of herd immunity by modeling how a virus moves through a population where some (but not all) of a population is vaccinated against a virus.**
 
 ## Table of Contents
 

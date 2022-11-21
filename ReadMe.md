@@ -8,18 +8,17 @@ This ReadMe (project description and specs) is a draft to help you get started o
 
 ## Table of Contents
 
-1. [Table of Contents](#%74%61%62%6C%65%2D%6F%66%2D%63%6F%6E%74%65%6E%74%73)
-1. [Goals](#%67%6F%61%6C%73)
-   1. [Rules](#%72%75%6C%65%73)
-   1. [Answer These Questions](#%61%6E%73%77%65%72%2D%74%68%65%73%65%2D%71%75%65%73%74%69%6F%6E%73)
-1. [Getting Started](#%67%65%74%74%69%6E%67%2D%73%74%61%72%74%65%64)
-   1. [Repository Setup](#%72%65%70%6F%73%69%74%6F%72%79%2D%73%65%74%75%70)
-1. [Running the Program](#%72%75%6E%6E%69%6E%67%2D%74%68%65%2D%70%72%6F%67%72%61%6D)
-1. [Basic Structure](#%62%61%73%69%63%2D%73%74%72%75%63%74%75%72%65)
-1. [Tips for Success](#%74%69%70%73%2D%66%6F%72%2D%73%75%63%63%65%73%73)
-1. [Project Completion](#%70%72%6F%6A%65%63%74%2D%63%6F%6D%70%6C%65%74%69%6F%6E)
-   1. [Stretch Challenges](#%73%74%72%65%74%63%68%2D%63%68%61%6C%6C%65%6E%67%65%73)
-1. [FAQs](#%66%61%71%73)
+- [Goals](#%67%6F%61%6C%73)
+- [Rules](#%72%75%6C%65%73)
+- [Answer These Questions](#%61%6E%73%77%65%72%2D%74%68%65%73%65%2D%71%75%65%73%74%69%6F%6E%73)
+- [Getting Started](#%67%65%74%74%69%6E%67%2D%73%74%61%72%74%65%64)
+- [Repository Setup](#%72%65%70%6F%73%69%74%6F%72%79%2D%73%65%74%75%70)
+- [Running the Program](#%72%75%6E%6E%69%6E%67%2D%74%68%65%2D%70%72%6F%67%72%61%6D)
+- [Basic Structure](#%62%61%73%69%63%2D%73%74%72%75%63%74%75%72%65)
+- [Tips for Success](#%74%69%70%73%2D%66%6F%72%2D%73%75%63%63%65%73%73)
+- [Project Completion](#%70%72%6F%6A%65%63%74%2D%63%6F%6D%70%6C%65%74%69%6F%6E)
+- [Stretch Challenges](#%73%74%72%65%74%63%68%2D%63%68%61%6C%6C%65%6E%67%65%73)
+- [FAQs](#%66%61%71%73)
 
 ## Goals
 
@@ -28,7 +27,7 @@ This ReadMe (project description and specs) is a draft to help you get started o
 - Get your data for virus name, mortality rate, and reproductive rate from [this Guardian article](https://www.theguardian.com/news/datablog/ng-interactive/2014/oct/15/visualised-how-ebola-compares-to-other-infectious-diseases).
 - During every time step of the simulation, **every sick person** should randomly interact with **100 other people** in the population. The chance of a sick person infecting a person that they interact with is the virus's reproductive rate. Example: if a virus has a reproductive rate of 15, then, on average, a sick person should infect 15 of the 100 people they interact with during that time step.
 
-### Rules
+## Rules
 
 1. A sick person only has a chance at infecting uninfected, unvaccinated people they encounter.
 2. An infected person cannot infect a vaccinated person. This still counts as an interaction.
@@ -41,7 +40,7 @@ This ReadMe (project description and specs) is a draft to help you get started o
 9. Resolve the states of all individuals that started the turn infected by determining if they die or survive the infection, and change the appropriate attributes.
 10. The simulation should output a logfile that contains a record of every interaction that occurred during the simulation. We will use this logfile to determine final statistics and answer questions about the simulation.
 
-### Answer These Questions
+## Answer These Questions
 
 Once you have successfully run a simulation, use your python skills to answer to analyze the simulation results
 
@@ -124,7 +123,7 @@ First, take a look at each of the files. Get a feel for the methods and attribut
 
 Ask your classmates and teachers for clarification/help/code reviews as needed, or drop in to tutoring hours. Share your questions and insights in the course Slack channel, or book some time to get help from Justin and Phyllis, the course teaching assistants. Collaboration is encouraged, but be sure that you typed in all the code yourself and the final project is your own!
 
-_Found a bug or a problem? Contact the course instructors or teaching assistants!_
+_Found a bug or a problem? Contact the course instructor or a teaching assistant!_
 
 The template code was written in a cottage on the coast of Ireland with spotty power during the strongest hurricane Ireland has seen in 61 years, [Editor's note: this is 100% true] so... **there are probably some bugs in the template code**. If you think something doesn't make sense, double check with your classmates and/or the instructor. If you feel the need to modify the template code to make it work another way, that's totally fine! The template code is there to help you, but it isn't a requirement that you use all of it.
 
@@ -136,12 +135,12 @@ This is a big project. There's no way that all the code you write is going to wo
 
 For this project to be considered complete, you need to:
 
-- include a .gitignore
-- submit your completed repo to GradeScope
+- include a `.gitignore`
+- submit your completed repo to Gradescope
 
-Please do not change the random seed set in the Simulation class! It is currently set to 42, and we will use this to double check that your simulation works and spits out the expected results.
+**IMPORTANT: Please do not change the random seed set in the Simulation class! It is currently set to 42, and we will use this to double check that your simulation works and spits out the expected results.**
 
-**Your repo should contain:**
+**Your repo should contain**:
 
 - Completed classes for `logger.py`, `simulation.py`, and `person.py`.
 - The addition of at least 2 additional tests to the `virus.py` file.
@@ -151,70 +150,74 @@ Please do not change the random seed set in the Simulation class! It is currentl
 - `logger_test.py` file should be created that allows for the testing of the logger class.
 - Answers to the questions asked above listed in a file named `answers.txt`.
 
-### Stretch Challenges
+## Stretch Challenges
 
 You'll find some of the smaller, individual stretch challenges contained with the comments of the code on the logger class. Other stretch challenges include:
 
 - Extending functionality so that we can test the spread of multiple viruses through a given population at the same time. (Difficulty Level: Hard)
+
 - Create a visualization of the simulation. You can do this with pygame. Create a number of sprites equal to the the number of people in your simulation. Show their status as color: Red = infected, Blue = uninfected, Green = vancinated, black = deceased.
 
-  - If you try this challenge you can change the interaction system to measure infections between sprites that collide. This would mean that the people/Sprites would need to be mobile
-  - You could also show this as a static image.
+   - If you try this challenge you can change the interaction system to measure infections between sprites that collide. This would mean that the people/Sprites would need to be mobile
+    
+   - You could also show this as a static image.
+
 
 - Graph the visualization using mathplotlib. This is a lirbary used to draw graphs and charts. You can use to graph the results of running the simulation.
 
 - Using a different calculation for figuring infections such as: Mask compliance percentage, incubation time etc. These are okay to apply with the follow notes:
 
-  - The project must be done on time.
-  - Running the simulation must still work the same. If there are any new required parameters these must be fully documented.
-  - The output must adhere to the project description.
+   - The project must be done on time.
+   - Running the simulation must still work the same. If there are any new required parameters these must be fully documented.
+   - The output must adhere to the project description.
 
 ## FAQs
 
-- **Q: Should we include the number of new infections at each step in the logged output?**
+### Q: Should we include the number of new infections at each step in the logged output?
 
-  **A**: Yes, include the number of new infections that happened each step in your log.
+**A**: Yes, include the number of new infections that happened each step in your log
 
-- **Q: Should the initially infected group test their mortality against the virus?**
+### Q: Should the initially infected group test their mortality against the virus?
+   
+**A**: This is up to you; it is not specified in the requirements. If the initially infected group tests their mortality, they probably should do sp at the end of the first time step.
 
-  A: This is up to you. It is not specified in the doc. If the initially infected group tests their mortality they probably should do it at the end of the first time step.
+### Q: Should I simulate different stages of the virus? 
+<small><em>(example: infected, incubation, self quarantine. Infectious time period)</em></small>
+   
+**A**: It's up to you. I recommend getting a basic simulation working first using simple rules before adding this since it will be more work. It's more important to get the work done on time than it is to add new features.
 
-- **Q: Should I simulate different stages of the virus?** _(example: infected, incubation, self quarantine. Infectious time period)_
+### Q: Should create a UI for a pygame simulation?
 
-  **A**: It's up to you. I recommend getting a basic simulation working first using simple rules before adding this since it will be more work. It's more important to get the work done on time than it is to add new features.
+**A**: Pygame doesn't include any UI controls. This makes it a lot of work to add a user interface. If you choose to use Pygame (its a stretch challenge) you can include variables at the top of your main.py that the researchers can adjust for each run of the simulation.
 
-- **Q: Should create a UI for a pygame simulation?**
+### Q: What should the logger output look like?
 
-  **A**: Pygame doesn't include any UI controls. This makes it a lot of work to add a user interface. If you choose to use Pygame (its a stretch challenge) you can include variables at the top of your main.py that the researchers can adjust for each run of the simulation.
+**A**: Include a header, a step for for each step the simulation ran, and a footer showing the final state of the populatio. Here are some details:
+   
+#### When Simulation Begins: Header
 
-- **Q: What should the logger output looks like?**
+- Initial size of the population
+- Initial number of infected people
+- Name of the virus
+- Stats for the virus
+- Date the simulation was run
 
-  **A**: Include a header, a step for for each step the simulation ran, and a footer showing the final state of the populatio. Here are some details:
+#### Each Iteration
 
-  - Header
-
-    - Initial size of the population
-    - Initial number of infected people
-    - Name of the virus
-    - Stats for the virus
-    - Date the simulation was run
-
-  - For each time step log
-
-    - The number of new infections
-    - The number of deaths
-    - Statistics for the current state of the population
-
+ - The number of new infections
+ - The number of deaths
+ - Statistics for the current state of the population:
+ 
       - Total number of living people
       - Total number of dead people
       - Total number of vaccinated people
-
-  - After simulation ends
-
-    - Total living
-    - Total dead
-    - Number of vaccinations
-    - Why the simulation ended
-    - Total number of interactions that happened in the simulation
-    - Number of interactions that resulted in vaccination
-    - Number of interactions that resulted in death
+             
+ #### After Simulation Ends: Summary
+ 
+ - Total living
+ - Total dead
+ - Number of vaccinations
+ - Why the simulation ended
+ - Total number of interactions that happened in the simulation
+ - Number of interactions that resulted in vaccination
+ - Number of interactions that resulted in death

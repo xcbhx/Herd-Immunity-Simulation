@@ -21,9 +21,9 @@ if __name__ == "__main__":
     assert virus.mortality_rate == 0.3
 
     virus_1 = Virus("E.Coli", 0.1, 0.015)
-    virus_2 = Virus("Tuberculosis", 0.055, 0.65)
-    virus_3 = Virus("Ebola", 0.023, 0.7)
-    virus_4 = Virus("Rabies",0.014, 1)
+    virus_2 = Virus("Tuberculosis", 0.65, 0.055)
+    virus_3 = Virus("Ebola", 0.7, 0.023)
+    virus_4 = Virus("Rabies", 1, 0.014)
 
     print(virus)
     print(virus_1)

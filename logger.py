@@ -40,12 +40,12 @@ class Logger(object):
 
         # Check edge cases and format the log entry
         if number_of_interactions == 0:
-            log_entry = f"Step {step_number}:\nNo interactions occured.\n"
+            log_entry = f"Step {step_number}:\nNo interactions occurred.\n"
         elif number_of_new_infections == 0:
-            log_entry = f"Step {step_number}:\nNo new infections occured.\n"
+            log_entry = f"Step {step_number}:\nNo new infections occurred.\n"
         else:
             log_entry = f"Step {step_number}:\n"
-            log_entry += f"Total Interactions:{number_of_interactions}\n"
+            log_entry += f"Total Interactions: {number_of_interactions}\n"
             log_entry += f"New Infections: {number_of_new_infections}\n"
 
         # Write to the log file
@@ -53,14 +53,31 @@ class Logger(object):
             outfile.write(log_entry + "\n")
 
     def log_infection_survival(self, step_number, population_count, number_of_new_fatalities):
-        # TODO: Finish this method. If the person survives, did_die_from_infection
-        # should be False.  Otherwise, did_die_from_infection should be True.
-        # Append the results of the infection to the logfile
-        pass
+        """
+        Log infection survival details for a simulation step.
 
-    def log_time_step(self, time_step_number):
-        # 
-        pass
+        Args:
+        step_number (int): The current step of the simulation.
+        population_count (int): Total number of poulation.
+        number_of_new_fatalities (int): Total number of death.
+        """
+        # Ensure inputs are valid
+        if number_of_new_fatalities < 0 or population_count < 0:
+            raise ValueError("Fatalities and population count cannot be negative.")
+        
+        # Calculate the surviving population
+        surviving_population = population_count - number_of_new_fatalities
+
+        log_entry = (
+            f'Step {step_number}:\n'
+            f'Population Total: {population_count}\n'
+            f'New Fatalities: {number_of_new_fatalities}\n'
+            f"Surviving Population: {surviving_population}\n"
+        )
+
+        with open(self.filename, "a") as outfile:
+            outfile.write(log_entry)
+
 
 
 if __name__ == "__main__":
@@ -68,3 +85,4 @@ if __name__ == "__main__":
     logger.write_metadata(100, 0.1, 'HIV', 0.8, 0.035)
     logger.log_interactions(step_number=1, number_of_interactions=10, number_of_new_infections=2)
     logger.log_interactions(step_number=2, number_of_interactions=0, number_of_new_infections=0)
+    logger.log_infection_survival(step_number=3, population_count=100, number_of_new_fatalities=20)

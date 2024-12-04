@@ -4,9 +4,13 @@ Virus Name:	HIV
 Mortality Rate:	0.8
 Reproduction Rate:	0.035
 Step 1:
-Total Interactions:10
+Total Interactions: 10
 New Infections: 2
 
 Step 2:
-No interactions occured.
+No interactions occurred.
 
+Step 3:
+Population Total: 100
+New Fatalities: 20
+Surviving Population: 80

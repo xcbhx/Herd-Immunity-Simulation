@@ -20,7 +20,6 @@ class Person(object):
                 self.infection = None
             return self.is_alive
 
-
         
 
 if __name__ == "__main__":
@@ -80,9 +79,6 @@ if __name__ == "__main__":
         print(f'Survived: {stats["survived"]}')
         print(f'Did not survive: {stats["did_not_survive"]}')
         print(f'Actual mortality rate: {(stats["did_not_survive"] / 100) * 100}%')
-            
-
-
 
 
     # Stretch challenge! 

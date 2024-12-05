@@ -78,11 +78,3 @@ class Logger(object):
         with open(self.filename, "a") as outfile:
             outfile.write(log_entry)
 
-
-
-if __name__ == "__main__":
-    logger = Logger("logger_test.txt")
-    logger.write_metadata(100, 0.1, 'HIV', 0.8, 0.035)
-    logger.log_interactions(step_number=1, number_of_interactions=10, number_of_new_infections=2)
-    logger.log_interactions(step_number=2, number_of_interactions=0, number_of_new_infections=0)
-    logger.log_infection_survival(step_number=3, population_count=100, number_of_new_fatalities=20)

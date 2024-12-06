@@ -15,6 +15,8 @@ class Simulation(object):
         self.pop_size = pop_size
         # Store the vacc_percentage 
         self.vacc_percentage = vacc_percentage
+        # Store initial_infected count
+        self.initial_infected = initial_infected
         # Create the population and store it
         self.population = self._create_population(self.pop_size, self.vacc_percentage, self.initial_infected)
 
@@ -36,13 +38,20 @@ class Simulation(object):
 
 
     def _simulation_should_continue(self):
-        # This method will return a booleanb indicating if the simulation 
-        # should continue. 
-        # The simulation should not continue if all of the people are dead, 
-        # or if all of the living people have been vaccinated. 
-        # TODO: Loop over the list of people in the population. Return True
-        # if the simulation should continue or False if not.
-        pass
+        """Detemines whether the simulation should cotinue.
+        Returns:
+            bool: True if there is at least one living, non-vaccinated person
+            in the population. Otherwise, False.
+        """
+        # Loop through the list of Person objects
+        for person in self.population:
+            if person.is_alive and not person.is_vaccinated:
+                # Found at least one living, non-vaccinated person
+                return True
+
+        # If the loop finishes without returning, it means no living, non-vaccinated people
+        return False
+         
 
     def run(self):
         # This method starts the simulation. It should track the number of 
@@ -113,8 +122,7 @@ if __name__ == "__main__":
     vacc_percentage = 0.1
     initial_infected = 10
 
-    # Make a new instance of the imulation
-    virus = Virus(virus, pop_size, vacc_percentage, initial_infected)
-    sim = Simulation(pop_size, vacc_percentage, initial_infected, virus)
+    # Make a new instance of the simulation
+    sim = Simulation(virus, pop_size, vacc_percentage, initial_infected)
 
     # sim.run()

@@ -7,74 +7,46 @@ from virus import Virus
 
 class Simulation(object):
     def __init__(self, virus, pop_size, vacc_percentage, initial_infected=1):
-        # Create a Logger object
         self.logger = Logger("simulation_log.txt")
-        # Store the virus
         self.virus = virus
-        # Store pop_size 
         self.pop_size = pop_size
-        # Store the vacc_percentage 
         self.vacc_percentage = vacc_percentage
-        # Store initial_infected count
         self.initial_infected = initial_infected
-        # Create the population and store it
         self.population = self._create_population(self.pop_size, self.vacc_percentage, self.initial_infected)
 
 
-    def _create_population(self, pop_size, vacc_percentage, initial_infected):
-        """A list of Person instances representing the population."""
+    def _create_population(self):
+        """Create a list of Person instances representing the population."""
         population = []
         for i in range(pop_size):
-            if i < initial_infected:
-                # Create infected Person
+            if i < self.initial_infected:
                 population.append(Person(i, is_vaccinated=False, infection=self.virus))
-            elif random.random() < vacc_percentage:
-                # Create vaccinated Person
+            elif random.random() < self.vacc_percentage:
                 population.append(Person(i, is_vaccinated=True, infection=None))
             else:
-                # Create uninfected and unvaccinated Person
                 population.append(Person(i, is_vaccinated=False, infection=None))
         return population
 
 
     def _simulation_should_continue(self):
-        """Detemines whether the simulation should cotinue.
-        Returns:
-            bool: True if there is at least one living, non-vaccinated person
-            in the population. Otherwise, False.
-        """
-        # Loop through the list of Person objects
+        """Detemines whether the simulation should cotinue."""
         for person in self.population:
             if person.is_alive and not person.is_vaccinated:
                 # Found at least one living, non-vaccinated person
                 return True
-
-        # If the loop finishes without returning, it means no living, non-vaccinated people
         return False
          
 
     def run(self):
-        # This method starts the simulation. It should track the number of 
-        # steps the simulation has run and check if the simulation should 
-        # continue at the end of each step. 
-
+        """Run the simulation"""
         time_step_counter = 0
-        should_continue = True
+        self.logger.write_metadata(self.pop_size, self.vacc_percentage, self.virus.name, self.virus_mortailty_rate, self.virus.repro_rate)
 
-        while should_continue:
-            # TODO: Increment the time_step_counter
-            # TODO: for every iteration of this loop, call self.time_step() 
-            # Call the _simulation_should_continue method to determine if 
-            # the simulation should continue
-            should_continue = self._simulation_should_continue()
-            pass
+        while self._simulation_should_continue():
+            time_step_counter += 1
+            self.time_step()
 
-        # TODO: Write meta data to the logger. This should be starting 
-        # statistics for the simulation. It should include the initial
-        # population size and the virus. 
-        
-        # TODO: When the simulation completes you should conclude this with 
-        # the logger. Send the final data to the logger. 
+        self.logger.log_infection_survival(time_step_counter, self.pop_size, len([p for p in self.population if not p.is_alive]))
 
     def time_step(self):
         # This method will simulate interactions between people, calulate 

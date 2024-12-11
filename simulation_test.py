@@ -11,7 +11,16 @@ def setup_simulation():
     return sim
 
 def test_create_population():
-    pass
+    sim = setup_simulation
+    population = sim.population
+
+    assert len(population) == sim.pop_size, "Population size does not match expected value."
+
+    infected_count = sum(1 for person in population if person.infection is not None)
+    assert infected_count == sim.initial_infected, "Initial infected count is incorrect."
+
+    vaccinated_count = sum(1 for person in population if person.is_vaccinated)
+    assert vaccinated_count <= int(sim.pop_size * sim.vacc_percentage), "Too many vaccinated people."
 
 def test_simulation_should_continue():
     pass

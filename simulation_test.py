@@ -10,7 +10,7 @@ def setup_simulation():
     sim = Simulation(virus, pop_size=100, vacc_percentage=0.1, initial_infected=5)
     return sim
 
-def test_create_population():
+def test_create_population(setup_simulation):
     sim = setup_simulation
     population = sim.population
 
@@ -22,8 +22,15 @@ def test_create_population():
     vaccinated_count = sum(1 for person in population if person.is_vaccinated)
     assert vaccinated_count <= int(sim.pop_size * sim.vacc_percentage), "Too many vaccinated people."
 
-def test_simulation_should_continue():
-    pass
+def test_simulation_should_continue(setup_simulation):
+    sim = setup_simulation
+
+    assert sim._simulation_should_continue(), "Simulation should continue at the start."
+
+    for person in sim.population:
+        person.is_alive = False
+
+    assert not sim._simulation_should_continue(), "Simulation should not continue when everyone is dead."
 
 def test_run():
     pass

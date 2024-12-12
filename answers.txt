@@ -1,6 +1,18 @@
-Needs to be answered once I have successfully run a simulation!!
+Herd Immunity Simulation Answers
 
-What were the inputs you gave the simulation? (Population size, percent vaccinated, virus name, mortality rate, reproductive rate)
-What percentage of the population became infected at some point before the virus burned out?
-What percentage of the population died from the virus?
-Out of all interactions sick individuals had during the entire simulation, how many times, in total, did a vaccination save someone from potentially becoming infected?
+1. What were the inputs you gave the simulation? (Population size, percent vaccinated, virus name, mortality rate, reproductive rate)
+* Population Size: 1000
+* Vaccination Percentage: 0.1
+* Virus Name: Ebola
+* Mortality Rate: 0.7
+* Reproduction Rate: 0.02
+
+
+2. What percentage of the population became infected at some point before the virus burned out?
+0.1% of the population became infected.
+
+3. What percentage of the population died from the virus?
+Total Deaths: 10
+
+4. Out of all interactions sick individuals had during the entire simulation, how many times, in total, did a vaccination save someone from potentially becoming infected?
+An individual being vaccinated saved them about 90% from potentially becoming infected.

@@ -97,14 +97,14 @@ class Simulation(object):
 
 if __name__ == "__main__":
     # Test your simulation here
-    virus_name = "Sniffles"
-    repro_num = 0.5
-    mortality_rate = 0.12
+    virus_name = "Ebola"
+    repro_num = 0.25
+    mortality_rate = 0.70
     virus = Virus(virus_name, repro_num, mortality_rate)
 
     # Set some values used by the simulation
-    pop_size = 1000
-    vacc_percentage = 0.1
+    pop_size = 100000
+    vacc_percentage = 0.90
     initial_infected = 10
 
     # Make a new instance of the simulation

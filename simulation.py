@@ -31,36 +31,50 @@ class Simulation(object):
 
     def _simulation_should_continue(self):
         """Detemines whether the simulation should cotinue."""
-        for person in self.population:
-            if person.is_alive and not person.is_vaccinated:
-                # Found at least one living, non-vaccinated person
-                return True
-        return False
+        living_infected = [p for p in self.population if p.is_alive and p.infection]
+        living_non_vaccinated = [p for p in self.population if p.is_alive and not p.is_vaccinated]
+        
+        # Simulation stops if there are no living, infected persons or everyone is vaccinated or dead
+        return len(living_infected) > 0 and len(living_non_vaccinated) > 0
          
 
     def run(self):
         """Run the simulation"""
         time_step_counter = 0
-        self.logger.write_metadata(self.pop_size, self.vacc_percentage, self.virus.name, self.virus.mortality_rate, self.virus.repro_rate)
+        self.logger.write_metadata(
+            self.pop_size, 
+            self.vacc_percentage, 
+            self.virus.name, 
+            self.virus.mortality_rate, 
+            self.virus.repro_rate
+            )
 
         while self._simulation_should_continue():
             time_step_counter += 1
-            self.time_step()
+            self.time_step(time_step_counter)
+        # Log the summary after the simulation ends
+        total_dead = len([p for p in self.population if not p.is_alive])
+        self.logger.log_infection_survival(
+            time_step_counter, 
+            self.pop_size,
+            total_dead
+            )
 
-        self.logger.log_infection_survival(time_step_counter, self.pop_size, len([p for p in self.population if not p.is_alive]))
-
-    def time_step(self):
+    def time_step(self, step_number):
         """Simulate interactions for each infected person."""
+        total_interactions = 0
+        new_infections = 0
+
         for person in self.population:
             if person.is_alive and person.infection:
-                interactions = 0
-                while interactions < 100:
-                    random_person = random.choice(self.population)
-                    if random_person.is_alive and random_person != person:
-                        self.interaction(person, random_person)
-                        interactions += 1
+                # Determine whether the person dies
+                if random.random() < self.virus.mortality_rate:
+                    person.is_alive = False
+                else:
+                    # Recover and become immune
+                    person.infection = None
+                    person.is_vaccinated = True
 
-        self._infect_newly_infected()
 
     def interaction(self, infected_person, random_person):
         """Handles an interaction between an infected person and another."""
